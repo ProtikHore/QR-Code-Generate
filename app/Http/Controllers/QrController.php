@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class QrController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-    	$name = "www.protikit.com";
+    	$name = $request->name;
+    	//echo $name;
     	return \QrCode::size(300)->generate($name); //show on page
 
     	//$result = \QrCode::size(300)->generate('my qrcode', 'qr.svg');

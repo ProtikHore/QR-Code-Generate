@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class PhoneController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-    	$number = '776-004-1698';
+    	$number = $request->phone;
+    	//echo $number;
     	return \QrCode::size(300)->phoneNumber($number);
     }
 }

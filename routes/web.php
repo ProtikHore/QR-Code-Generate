@@ -12,8 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home.index');
 });
 
-Route::get('/qrcode', 'QrController@index')->name('qr.index');
-Route::get('/phone', 'PhoneController@index')->name('phone.index');
+Route::get('/home', 'HomeController@index')->name('home.index');
+Route::post('/qrcode', 'QrController@index')->name('qr.index');
+Route::post('/phone', 'PhoneController@index')->name('phone.index');
+Route::post('/email', 'EmailController@index')->name('email.index');
+Route::post('/sms', 'SmsController@index')->name('sms.index');
