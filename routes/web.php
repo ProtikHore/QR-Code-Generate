@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/qrcode', 'QrController@index')->name('qr.index');
+Route::get('/phone', 'PhoneController@index')->name('phone.index');
